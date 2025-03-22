@@ -1,0 +1,24 @@
+.hexagon-container {
+  position: relative;
+  width: 300px;
+  height: 260px; /* approximate height for a hexagon */
+  margin: 0 auto;
+  background: #eee;
+  clip-path: polygon(
+    25% 6.7%, 75% 6.7%, 
+    100% 50%, 75% 93.3%, 
+    25% 93.3%, 0% 50%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 2px solid #333;
+}
+
+.ball {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #ff5722;
+}
