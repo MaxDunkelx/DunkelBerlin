@@ -66,3 +66,89 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+/* Add this to your index.css or update your existing RTL styles */
+
+/* RTL Support with centered text */
+html[dir="rtl"] body {
+  font-family: 'Arial', 'Helvetica', sans-serif;
+}
+
+.rtl {
+  direction: rtl;
+  text-align: center; /* Center text in RTL mode */
+}
+
+.ltr {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Center all text content in RTL mode */
+html[dir="rtl"] h1, 
+html[dir="rtl"] h2, 
+html[dir="rtl"] h3, 
+html[dir="rtl"] p, 
+html[dir="rtl"] span,
+html[dir="rtl"] div {
+  text-align: center;
+}
+
+/* Center specific sections in RTL mode */
+html[dir="rtl"] .hero-section .content-overlay,
+html[dir="rtl"] .about-section .section-container,
+html[dir="rtl"] .services-section .section-container,
+html[dir="rtl"] .projects-section .section-container,
+html[dir="rtl"] .testimonials-section .section-container,
+html[dir="rtl"] .contact-section .section-container,
+html[dir="rtl"] .extra-content,
+html[dir="rtl"] .service-card,
+html[dir="rtl"] .testimonial {
+  text-align: center;
+}
+
+/* Menu buttons still need to be reversed */
+html[dir="rtl"] .menu-buttons {
+  flex-direction: row-reverse;
+  justify-content: center; /* Center the menu items */
+}
+
+/* Language switcher styles */
+.language-switcher {
+  display: flex;
+  margin-left: 20px;
+}
+
+.language-switcher button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  background: none;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.language-switcher button.active {
+  background-color: #333;
+  color: white;
+}
+
+/* Fix alignment issues for flexbox containers */
+html[dir="rtl"] .services-grid,
+html[dir="rtl"] .testimonials-grid {
+  justify-content: center;
+}
+
+/* Ensure buttons and CTAs are centered */
+html[dir="rtl"] .cta-btn {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Ensure content within cards is centered */
+html[dir="rtl"] .service-card h3,
+html[dir="rtl"] .service-card p,
+html[dir="rtl"] .testimonial p,
+html[dir="rtl"] .testimonial span {
+  text-align: center;
+}

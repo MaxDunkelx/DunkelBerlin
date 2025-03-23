@@ -245,3 +245,52 @@
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 }
+/* Add these to your home.css */
+
+/* Text alignment classes */
+.text-center {
+  text-align: center !important;
+}
+
+/* RTL specific styles for the home page */
+.rtl-body .home-container {
+  text-align: center;
+}
+
+/* Center align section titles and content in RTL mode */
+.rtl-body h1, 
+.rtl-body h2, 
+.rtl-body h3, 
+.rtl-body p {
+  text-align: center;
+}
+
+/* Make sure flex items are centered in RTL mode */
+.rtl-body .services-grid,
+.rtl-body .testimonials-grid {
+  justify-content: center;
+}
+
+/* Ensure cards display content centered in RTL mode */
+.rtl-body .service-card,
+.rtl-body .testimonial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Ensure CTAs are centered */
+.rtl-body .cta-btn {
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+}
+
+/* Center all content in the hero section */
+.rtl-body .hero-section .content-overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}

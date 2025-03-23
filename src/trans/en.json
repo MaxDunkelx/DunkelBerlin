@@ -1,0 +1,66 @@
+{
+    "menu": {
+      "contactUs": "Contact Us",
+      "ourProjects": "Our Projects",
+      "aboutUs": "About Us",
+      "home": "Home",
+      "ourServices": "Our Services"
+    },
+    "hero": {
+      "title": "Innovative Software Solutions",
+      "description": "We develop cutting-edge applications and websites while offering complete software solutions—from design to deployment. Experience the future of technology with us.",
+      "cta": "Learn More"
+    },
+    "about": {
+      "title": "About Us",
+      "description": "We are a high-tech company that offers comprehensive digital solutions. Our team combines expertise in design, development, and strategy to create products that drive business success. With years of experience, we stay ahead of trends and continuously innovate to meet the evolving demands of the market."
+    },
+    "services": {
+      "title": "Our Services",
+      "webDev": {
+        "title": "Web Development",
+        "description": "Cutting-edge responsive websites tailored to your business needs."
+      },
+      "mobileApps": {
+        "title": "Mobile Apps",
+        "description": "Innovative mobile applications designed for performance and user engagement."
+      },
+      "uiUx": {
+        "title": "UI/UX Design",
+        "description": "Elegant and intuitive designs that enhance user experience."
+      },
+      "cloud": {
+        "title": "Cloud Solutions",
+        "description": "Scalable cloud-based platforms that empower your business."
+      }
+    },
+    "projects": {
+      "title": "Our Projects"
+    },
+    "testimonials": {
+      "title": "What Our Clients Say",
+      "client1": {
+        "quote": "The team delivered beyond expectations. Their innovative approach and attention to detail transformed our digital presence.",
+        "name": "- Client Romano-Exp"
+      },
+      "client2": {
+        "quote": "Professional, creative, and efficient—highly recommended for any business looking to elevate their brand.",
+        "name": "- Client Max dunkel"
+      },
+      "client3": {
+        "quote": "A truly transformative experience. Our project was handled with utmost professionalism.",
+        "name": "- Client Motor Indestries Jerusalem"
+      }
+    },
+    "contact": {
+      "title": "Get In Touch",
+      "description": "Ready to take your digital experience to the next level? Contact us today and let's build something extraordinary.",
+      "cta": "Contact Us"
+    },
+    "extraContent": {
+      "title": "More Information",
+      "paragraph1": "This extra section is added to allow scrolling. Replace this content with your actual sections as needed.",
+      "paragraph2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan consequat ligula, et hendrerit libero dapibus a. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+      "paragraph3": "Vivamus sollicitudin, metus non gravida congue, massa libero maximus velit, ac sagittis elit tellus ac elit. Sed sit amet ligula a erat viverra aliquam."
+    }
+  }

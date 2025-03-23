@@ -1,12 +1,22 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import "./home.css"; // Your global styles for the home page
 import Menu from "../components/menu";
 import ProjectSlider from "../components/projectSlider";
 import HexagonBallAnimation from "../components/HexagonBallAnimation";
 
 const Home = () => {
+  const { t, i18n } = useTranslation();
   const [cursorPosition, setCursorPosition] = useState({ x: -9999, y: -9999 });
   const animationFrame = useRef();
+  const isRTL = i18n.language === "he"; // Check if current language is Hebrew
+
+  // Set document direction based on language
+  useEffect(() => {
+    document.documentElement.dir = isRTL ? "rtl" : "ltr";
+    // Apply a body class for additional styling
+    document.body.className = isRTL ? "rtl-body" : "ltr-body";
+  }, [isRTL]);
 
   // Handle mouse movement for interactive overlay effects
   const handleMouseMove = (e) => {
@@ -28,9 +38,13 @@ const Home = () => {
     setCursorPosition({ x: -9999, y: -9999 });
   };
 
+  // CSS classes with RTL awareness
+  const containerClass = `home-container ${isRTL ? "rtl" : "ltr"}`;
+  const textAlignClass = isRTL ? "text-center" : "";
+
   return (
     <div
-      className="home-container"
+      className={containerClass}
       onMouseMove={handleMouseMove}
       onTouchMove={handleTouchMove}
       onMouseLeave={handleMouseLeave}
@@ -55,16 +69,12 @@ const Home = () => {
       ></div>
 
       {/* Hero Section */}
-      <section className="hero-section">
-        <div className="content-overlay">
-          <h1>Innovative Software Solutions</h1>
-          <p>
-            We develop cutting-edge applications and websites while offering
-            complete software solutions—from design to deployment. Experience the
-            future of technology with us.
-          </p>
+      <section className={`hero-section ${textAlignClass}`}>
+        <div className={`content-overlay ${textAlignClass}`}>
+          <h1>{t('hero.title')}</h1>
+          <p>{t('hero.description')}</p>
           <a href="#about" className="cta-btn">
-            Learn More
+            {t('hero.cta')}
           </a>
         </div>
       </section>
@@ -74,125 +84,87 @@ const Home = () => {
         <div className="hexagon-animation-wrapper">
           <HexagonBallAnimation />
         </div>
-       
       </section>
 
       {/* About Section */}
-      <section id="about" className="about-section">
-        <div className="section-container">
-          <h2>About Us</h2>
-          <p>
-            We are a high-tech company that offers comprehensive digital solutions.
-            Our team combines expertise in design, development, and strategy to create
-            products that drive business success. With years of experience, we stay
-            ahead of trends and continuously innovate to meet the evolving demands of
-            the market.
-          </p>
+      <section id="about" className={`about-section ${textAlignClass}`}>
+        <div className={`section-container ${textAlignClass}`}>
+          <h2>{t('about.title')}</h2>
+          <p>{t('about.description')}</p>
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="services-section">
-        <div className="section-container">
-          <h2>Our Services</h2>
+      <section className={`services-section ${textAlignClass}`}>
+        <div className={`section-container ${textAlignClass}`}>
+          <h2>{t('services.title')}</h2>
           <div className="services-grid">
-            <div className="service-card">
-              <h3>Web Development</h3>
-              <p>
-                Cutting-edge responsive websites tailored to your business needs.
-              </p>
+            <div className={`service-card ${textAlignClass}`}>
+              <h3>{t('services.webDev.title')}</h3>
+              <p>{t('services.webDev.description')}</p>
             </div>
-            <div className="service-card">
-              <h3>Mobile Apps</h3>
-              <p>
-                Innovative mobile applications designed for performance and user
-                engagement.
-              </p>
+            <div className={`service-card ${textAlignClass}`}>
+              <h3>{t('services.mobileApps.title')}</h3>
+              <p>{t('services.mobileApps.description')}</p>
             </div>
-            <div className="service-card">
-              <h3>UI/UX Design</h3>
-              <p>
-                Elegant and intuitive designs that enhance user experience.
-              </p>
+            <div className={`service-card ${textAlignClass}`}>
+              <h3>{t('services.uiUx.title')}</h3>
+              <p>{t('services.uiUx.description')}</p>
             </div>
-            <div className="service-card">
-              <h3>Cloud Solutions</h3>
-              <p>
-                Scalable cloud-based platforms that empower your business.
-              </p>
+            <div className={`service-card ${textAlignClass}`}>
+              <h3>{t('services.cloud.title')}</h3>
+              <p>{t('services.cloud.description')}</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Projects Section */}
-      <section className="projects-section">
-        <div className="section-container">
-          <h2>Our Projects</h2>
+      <section className={`projects-section ${textAlignClass}`}>
+        <div className={`section-container ${textAlignClass}`}>
+          <h2>{t('projects.title')}</h2>
           <ProjectSlider />
         </div>
       </section>
 
       {/* Testimonials Section */}
-      <section className="testimonials-section">
-        <div className="section-container">
-          <h2>What Our Clients Say</h2>
+      <section className={`testimonials-section ${textAlignClass}`}>
+        <div className={`section-container ${textAlignClass}`}>
+          <h2>{t('testimonials.title')}</h2>
           <div className="testimonials-grid">
-            <div className="testimonial">
-              <p>
-                "The team delivered beyond expectations. Their innovative approach and
-                attention to detail transformed our digital presence."
-              </p>
-              <span>- Client Romano-Exp</span>
+            <div className={`testimonial ${textAlignClass}`}>
+              <p>{t('testimonials.client1.quote')}</p>
+              <span>{t('testimonials.client1.name')}</span>
             </div>
-            <div className="testimonial">
-              <p>
-                "Professional, creative, and efficient—highly recommended for any business
-                looking to elevate their brand."
-              </p>
-              <span>- Client Max dunkel</span>
+            <div className={`testimonial ${textAlignClass}`}>
+              <p>{t('testimonials.client2.quote')}</p>
+              <span>{t('testimonials.client2.name')}</span>
             </div>
-            <div className="testimonial">
-              <p>
-                "A truly transformative experience. Our project was handled with utmost
-                professionalism."
-              </p>
-              <span>- Client Motor Indestries Jerusalem</span>
+            <div className={`testimonial ${textAlignClass}`}>
+              <p>{t('testimonials.client3.quote')}</p>
+              <span>{t('testimonials.client3.name')}</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* Contact / Extra Content Section */}
-      <section className="contact-section">
-        <div className="section-container">
-          <h2>Get In Touch</h2>
-          <p>
-            Ready to take your digital experience to the next level? Contact us today
-            and let’s build something extraordinary.
-          </p>
+      <section className={`contact-section ${textAlignClass}`}>
+        <div className={`section-container ${textAlignClass}`}>
+          <h2>{t('contact.title')}</h2>
+          <p>{t('contact.description')}</p>
           <a href="/contact" className="cta-btn">
-            Contact Us
+            {t('contact.cta')}
           </a>
         </div>
       </section>
 
       {/* Extra Content for Scrolling */}
-      <div className="extra-content">
-        <h2>More Information</h2>
-        <p>
-          This extra section is added to allow scrolling. Replace this content with
-          your actual sections as needed.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan
-          consequat ligula, et hendrerit libero dapibus a. Pellentesque habitant morbi
-          tristique senectus et netus et malesuada fames ac turpis egestas.
-        </p>
-        <p>
-          Vivamus sollicitudin, metus non gravida congue, massa libero maximus velit,
-          ac sagittis elit tellus ac elit. Sed sit amet ligula a erat viverra aliquam.
-        </p>
+      <div className={`extra-content ${textAlignClass}`}>
+        <h2>{t('extraContent.title')}</h2>
+        <p>{t('extraContent.paragraph1')}</p>
+        <p>{t('extraContent.paragraph2')}</p>
+        <p>{t('extraContent.paragraph3')}</p>
       </div>
     </div>
   );
