@@ -58,9 +58,19 @@
       "cta": "Contact Us"
     },
     "extraContent": {
-      "title": "More Information",
-      "paragraph1": "This extra section is added to allow scrolling. Replace this content with your actual sections as needed.",
-      "paragraph2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan consequat ligula, et hendrerit libero dapibus a. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
-      "paragraph3": "Vivamus sollicitudin, metus non gravida congue, massa libero maximus velit, ac sagittis elit tellus ac elit. Sed sit amet ligula a erat viverra aliquam."
+      "title": "More About DunkelBerlin.Inc",
+      "paragraphs": [
+        "🔹 Founded by IDF veterans with advanced computer science degrees",
+        "🔹 Leadership team with 15+ years combined military experience",
+        "🔹 Specialize in secure, mission-critical software solutions",
+        "🔹 Cybersecurity experts certified in NATO standards",
+        "🔹 Enterprise-grade application development",
+        "🔹 Machine learning solutions for defense applications",
+        "🔹 Real-time data processing systems",
+        "🔹 Secure cloud infrastructure architecture",
+        "🔹 Tactical network optimization software",
+        "🔹 Veteran hiring priority and mentorship programs"
+      ]
     }
   }
+  

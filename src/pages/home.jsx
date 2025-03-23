@@ -159,13 +159,16 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Extra Content for Scrolling */}
-      <div className={`extra-content ${textAlignClass}`}>
-        <h2>{t('extraContent.title')}</h2>
-        <p>{t('extraContent.paragraph1')}</p>
-        <p>{t('extraContent.paragraph2')}</p>
-        <p>{t('extraContent.paragraph3')}</p>
-      </div>
+      <section className={`extra-content-section ${textAlignClass}`}>
+  <div className={`section-container ${textAlignClass}`}>
+    <h2>{t('extraContent.title')}</h2>
+    {t('extraContent.paragraphs', { returnObjects: true }).map((paragraph, index) => (
+      <p key={index}>{paragraph}</p>
+    ))}
+  </div>
+</section>
+
+      
     </div>
   );
 };
