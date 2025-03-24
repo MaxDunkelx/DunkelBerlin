@@ -159,14 +159,24 @@ const Home = () => {
         </div>
       </section>
 
-      <section className={`extra-content-section ${textAlignClass}`}>
-  <div className={`section-container ${textAlignClass}`}>
+    {/* More About DunkelBerlin.Inc Section */}
+<section className="about-dunkel">
+  <div className="section-container">
     <h2>{t('extraContent.title')}</h2>
-    {t('extraContent.paragraphs', { returnObjects: true }).map((paragraph, index) => (
-      <p key={index}>{paragraph}</p>
-    ))}
+    <div className="dunkel-list">
+      {t('extraContent.paragraphs', { returnObjects: true }).map((paragraph, index) => (
+        <div key={index} className="dunkel-item">
+          {paragraph}
+        </div>
+      ))}
+    </div>
   </div>
 </section>
+
+      {/* Symbol Image at the Bottom */}
+      <div className="symbol-container">
+        <img src="/DunkelBerlin/assets/symbol.jpg" alt="Symbol" className="symbol-image" />
+      </div>
 
       
     </div>

@@ -42,20 +42,24 @@ const Menu = () => {
         <button onClick={() => navigate("/our-services")}>{t('menu.ourServices')}</button>
         
         {/* Language switcher */}
-        <div className="language-switcher">
-          <button
-            onClick={() => changeLanguage("en")}
-            className={i18n.language === "en" ? "active" : ""}
-          >
-            EN
-          </button>
-          <button
-            onClick={() => changeLanguage("he")}
-            className={i18n.language === "he" ? "active" : ""}
-          >
-            עב
-          </button>
-        </div>
+      {/* Language switcher */}
+{/* Language switcher */}
+<div className="language-switcher">
+  <button
+    onClick={() => changeLanguage("en")}
+    className={i18n.language === "en" ? "active" : ""}
+  >
+    <img src="https://flagcdn.com/w40/us.png" alt="English" width="24" height="18" />
+  </button>
+  <button
+    onClick={() => changeLanguage("he")}
+    className={i18n.language === "he" ? "active" : ""}
+  >
+    <img src="https://flagcdn.com/w40/il.png" alt="Hebrew" width="24" height="18" />
+  </button>
+</div>
+
+
       </div>
     </div>
   );

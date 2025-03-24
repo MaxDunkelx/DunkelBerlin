@@ -3,15 +3,18 @@
   position: fixed;
   top: 10px;
   left: 50%;
+  width: 100%;
   transform: translateX(-50%);
-  background: #6828bd ;
+  /* Dark gradient background for a sleek look */
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
   padding: 15px 30px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Center the inner content */
   align-items: center;
   border-radius: 30px;
   z-index: 1000;
   transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* Collapsed State: Black box with GIF background */
@@ -32,32 +35,67 @@
   background-position: center;
 }
 
-/* Menu Buttons Container */
+/* Menu Buttons Container: 80% width for buttons */
 .menu-buttons {
+  width: 80%;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   gap: 15px;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* Hide menu buttons when collapsed */
-.menu-buttons.hidden {
-  opacity: 0;
-  visibility: hidden;
-}
-
-/* Menu Button Styles */
+/* Standard Menu Button Styles */
 .menu-buttons button {
   background: darkblue;
   border: 2px solid #c9a46b; /* Gold border */
   color: white;
-  padding: 8px 15px;
+  padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-family: 'Roboto', sans-serif;
 }
 
 .menu-buttons button:hover {
   background: #c9a46b; /* Gold on hover */
   color: black;
   transform: scale(1.05);
+}
+
+/* Integrated Language Switcher Styled as One Menu Button */
+.language-switcher {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 140px;  /* Adjust to be about double the width of a normal menu button */
+  background: darkblue;
+  border: 2px solid #c9a46b;
+  border-radius: 5px;
+  padding: 10px;
+  margin-left: 10px;
+}
+
+.language-switcher button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  flex: 1;
+  font-size: 1rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Add a vertical divider between the two flag buttons */
+.language-switcher button:not(:last-child) {
+  border-right: 1px solid #c9a46b;
+}
+
+.language-switcher button:hover {
+  transform: scale(1.05);
+}
+
+/* Active language indicator */
+.language-switcher button.active {
+  background: #c9a46b;
+  color: black;
 }
