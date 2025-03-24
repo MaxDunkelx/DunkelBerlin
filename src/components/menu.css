@@ -37,11 +37,14 @@
 
 /* Menu Buttons Container: 80% width for buttons */
 .menu-buttons {
-  width: 80%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 15px;
+}
+.menu-buttons.hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* Standard Menu Button Styles */
